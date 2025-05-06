@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% load static %} <link rel="stylesheet" href="{%
+static "style.css" %}"> {% block content %}
+<div class="section">
+  <h1 class="section-heading">New Releases Here</h1>
+  <div class="card-container">
+    {% for movie in movies %}
+    <a class="movielink" href="{% url 'Movie_display' movie.name %}">
+      <div class="movie-card">
+        <img src="{{ movie.poster.url }}" alt="{{ movie.name }}" />
+        <p class="mname">{{movie.name}}</p>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

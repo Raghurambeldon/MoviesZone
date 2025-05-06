@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% load static %} <link rel="stylesheet" href="{%
+static "style.css" %}"> {% block content %} {% if movies %}
+<p class="title-p">{{movies.name}}</p>
+<span>{{movies.cast}}</span>
+<video controls src="{{movies.moviefile.url}}"></video>
+{% endif %} {% endblock content %}

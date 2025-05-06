@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <link rel="stylesheet" href="{% static "style.css" %}">
+  <body>
+    <header>
+      <div class="navbar">
+        <div ><p class="logo">MovieZone</p></div>
+        <div class="nav-links">
+          <a href="{% url "home" %}">Home</a>
+          <a href="{% url "moviespage" %}">Movies</a>
+          <a href="{% url "seriespage" %}">Series</a>
+          <a href="">Categories</a>
+          <a href="{% url "newreleases" %}">New Releases</a>
+        </div>
+      </div>
+
+    {%block content %}{% endblock content %}
+    <div class="footer">
+      <div>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Careers</a>
+      </div>
+      <div>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </body>
+</html>

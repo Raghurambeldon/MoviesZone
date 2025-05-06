@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% load static %} <link rel="stylesheet" href="{%
+static "style.css" %}">{% block content %}
+<div class="movie-wrapper">
+  <h1 class="section-heading">Films Available Here</h1>
+  <div class="film-gallery">
+    {% for film in movies %}
+    <a class="movielink" href="{% url 'Movie_display' film.name %}"
+      ><div class="film-card">
+        <img
+          src="{{ film.poster.url }}"
+          alt="{{ film.title }}"
+          class="film-poster"
+        />
+        <div class="film-details">
+          <h2 class="film-title">{{ film.name }}</h2>
+          <p class="film-rating">Rating: {{ film.Rating }}</p>
+        </div>
+      </div></a
+    >
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}
